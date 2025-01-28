@@ -1,0 +1,5 @@
+1. [Secure API](https://manage.auth0.com)
+2. [NoSQL DB](https://cloud.mongodb.com)
+3. [WAF + Exploitation Guard](https://dash.cloudflare.com)
+4. [Caching + SQL](https://dashboard.render.com)
+5. [Event Streaming](https://confluent.cloud)

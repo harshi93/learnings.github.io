@@ -1,0 +1,6 @@
+1. [DOps Swiss Knife](https://github.com/trimstray/the-book-of-secret-knowledge)
+2. [Free-For-Dev](https://github.com/ripienaar/free-for-dev)
+3. [Free Monitor](https://github.com/netdata/netdata)
+4. [DOps Excercises](https://github.com/bregman-arie/devops-exercises)
+5. [Awesome Scalability](https://github.com/binhnguyennus/awesome-scalability)
+6. [DOps Tuts](https://github.com/antonputra/tutorials)
