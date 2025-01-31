@@ -54,3 +54,4 @@
 54. [Cheatsheets](https://quickref.me/)
 55. [Python Design Patterns Tuts](https://github.com/faif/python-patterns)
 56. [Developer Roadmaps](https://github.com/kamranahmedse/developer-roadmap)
+57. [Awesome KubeFlow](https://github.com/terrytangyuan/awesome-kubeflow)
