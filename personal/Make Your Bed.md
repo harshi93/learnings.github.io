@@ -1,0 +1,13 @@
+- Make bed, as it gets the balling rolling for the day, gives a sense of accomplishment
+- Don't underestimate importance of a teammate 
+- It takes a team of two people to paddle the boat to destination in life, you can't paddle alone 
+- Don't judge a book by its cover 
+- Dont expect life to be fair because it isn't fair
+- When pushed down due to challenges thrown by life, lift yourself up and march forward.
+- Use your failures to make you strong, determined
+- Be willing to take big risks and win big
+- Be courageous and determined to achieve your goals
+- Be someone to instill hope in others 
+- Life is beautiful even in it's darkest times. 
+- It's the bad times the make the good times worth cherishing
+- Don't give up
