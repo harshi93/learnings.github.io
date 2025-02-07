@@ -1,0 +1,10 @@
+- Fear of society's disapproval, prevents us from leaving rat race and growing wealthy.
+- Fear and greed can drive financially ignorant people to make irrational decision.
+- Develop your financial intelligence (aka understanding about investments, stocks, accounting, economics, etc).
+- Financial intelligence and realistic assessments of your finances is key to growing wealthy.
+- Learn to take risks.
+- Be patient, stay motivated and be financially disciplined.
+- Don't be lazy (avoiding what needs to be done)and arrogance (ignorance [lacking financial knowledge] + ego [not admitting what you don't know] ).
+- Invest in assets (things that multiply your money), avoid liabilities (things that take out your money).
+- Profession pays the bill, business will make you wealthy.
+- Understand tax code to minimize your taxes.
