@@ -9,6 +9,7 @@ Knowing, I am responsible for smiles on faces of people
 # Goals In Progress
 1. Learn from the best engineers of the world
 2. Being Remembered Forever
+3. Transition to MLOps Engineer In 1 year
 
 # Goals Achieved 
 1. Gain work experience at pre-seed company
