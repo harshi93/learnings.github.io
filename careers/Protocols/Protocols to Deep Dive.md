@@ -1,4 +1,4 @@
-# Protocols To Learn More
+# Topics To Learn More
 1. Http
 2. Grpc
 3. Sftp
@@ -14,3 +14,7 @@
 13. MQTT
 14. AMQP
 15. SSE
+16. Unicast, Multicast, Broadcast, and Anycast
+17. EDNS0
+18. SAML Assertions
+19. SSL Terminations
