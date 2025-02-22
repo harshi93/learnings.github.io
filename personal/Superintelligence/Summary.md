@@ -1,0 +1,1 @@
+Inventing a superintelligent machine capable of things far beyond the ability of a human is both a tantalizing prospect and a precarious path. In order to ensure such technology develops in a safe, responsible manner, we need to prioritize safety over unchecked technological advancement. The fate of our species depends on it.
