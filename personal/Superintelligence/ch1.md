@@ -1,0 +1,1 @@
+the main difference between human beings and animals is our capacity for abstract thinking paired with the ability to communicate and accumulate information.

@@ -1,0 +1,9 @@
+One option is to take at least 10 grams of grass-fed or pastured collagen protein supplement daily, boosting the amino acids your body needs to produce collagen. Collagen protein powder has been found to reduce wrinkles, boost hydration, and enhance your skin’s elasticity. 
+
+You can also combat wrinkles by incorporating foods high in antioxidants and polyphenols – a kind of compound found in plants – into your diet, things like vegetables, dark chocolate, and coffee. There’s even a specific kind of antioxidant that can target graying hair. Insufficient levels of an antioxidant called catalase cause a buildup of the chemical compound hydrogen peroxide, which in turn damages the cells that produce melanin - the pigment that gives your hair and skin their color. One way to target graying hair is by taking catalase in antioxidant supplements such as curcumin, ashwagandha, or vitamin E.
+
+If it’s balding rather than graying that’s your concern, you might want to try a shampoo that blocks DHT, which is a sex hormone that’s a common cause of balding. DHT-blocking shampoos fight baldness without the side effects commonly found in pharmaceutical drugs such as Rogaine, minoxidil and finasteride.
+
+Blocking DHT is the most popular route to preventing balding, but it isn’t the only option. Hair loss is often a result of stress, which can be managed through exercise or meditation. It could even be the result of a hormonal imbalance. If you think this might be the case, have an anti-aging doctor check your thyroid hormone levels and specifically test the levels of your T3 and RT3 thyroid hormones.
+
+A low-carb, high-fat diet, exercise, and quality sleep are all basic methods for improving your skin and hair to maintain a youthful appearance. When you put in the work to live longer and become Super Human, looking better is just a byproduct.
