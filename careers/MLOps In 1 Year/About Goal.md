@@ -12,3 +12,4 @@ Less than 1 Year
 # How:
 1. Read and apply [Guide To MLOps](https://www.run.ai/guides/machine-learning-operations/mlflow)
 2. View and apply [Guide To ZenML](https://youtu.be/-dJPoLm_gtE?si=xxDWWwhmsiKLHCMi)
+3. Read and apply [MLOps Pipeline](https://github.com/khuyentran1401/cicd-mlops-demo)
