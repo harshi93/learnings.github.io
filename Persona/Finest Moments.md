@@ -9,3 +9,4 @@
 9. Assignment as Microsoft Certified Student Partner
 10. Regular 1hr Workout Sessions at Gym for 520 Days
 11. Admission in Masters degree with Specialization in Computer Science, at Stevens Institute of Technology
+12. [K9s issue recognization](https://github.com/derailed/k9s/issues/2454)
