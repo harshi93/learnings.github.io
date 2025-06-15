@@ -38,7 +38,10 @@ jobs:
           git tag -l
           
           echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-          echo "commit_msg=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+          # Safely handle commit message by properly escaping it
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          # Use printf to ensure proper escaping of the commit message
+          printf "commit_msg<<EOF\n%s\nEOF\n" "$COMMIT_MSG" >> $GITHUB_OUTPUT
 
       - name: Get latest tag
         id: get-tag
@@ -86,7 +89,8 @@ jobs:
             Automated release ${{ steps.get-tag.outputs.tag }}
             
             Commit SHA: ${{ steps.commit-details.outputs.sha_short }}
-            Commit message: ${{ steps.commit-details.outputs.commit_msg }}
+            Commit message: |
+              ${{ steps.commit-details.outputs.commit_msg }}
           draft: false
           prerelease: false
           generate_release_notes: true
