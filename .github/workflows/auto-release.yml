@@ -43,6 +43,7 @@ jobs:
       - name: Get latest tag
         id: get-tag
         run: |
+          set -e
           # Get the latest tag created by the auto-tag workflow
           git fetch --tags origin
           
@@ -53,26 +54,28 @@ jobs:
           TRIGGER_SHA="${{ github.event.workflow_run.head_sha }}"
           echo "Looking for tags pointing to commit SHA: $TRIGGER_SHA"
           
-          # Get tags for the trigger commit
-          COMMIT_TAGS=$(git tag --points-at $TRIGGER_SHA 2>/dev/null || echo "")
+          # Get the most recent tag in the repository to use as a fallback
+          echo "Finding the most recent tag in the repository..."
+          RECENT_TAG=$(git tag -l "v*" | sort -V | tail -n 1 || echo "")
+          echo "Most recent tag found: ${RECENT_TAG:-none}"
           
-          if [ -n "$COMMIT_TAGS" ]; then
-            echo "Tags found for this commit: $COMMIT_TAGS"
-            # Get the latest semver tag from the commit's tags
-            LATEST_TAG=$(echo "$COMMIT_TAGS" | grep -E "^v[0-9]+\.[0-9]+\.[0-9]+$" | sort -V | tail -n 1)
-          else
-            echo "No tags found specifically for this commit, using latest tag instead"
-            # Fallback to latest tag in the repository
-            LATEST_TAG=$(git tag -l "v*" | sort -V | tail -n 1)
-          fi
+          # Set the tag to use for the release
+          RELEASE_TAG="$RECENT_TAG"
           
-          if [ -z "$LATEST_TAG" ]; then
-            echo "Error: No valid tags found" >&2
+          # Make sure we have a valid tag
+          if [ -z "$RELEASE_TAG" ]; then
+            echo "Error: No valid tags found in the repository" >&2
             exit 1
           fi
           
-          echo "tag=$LATEST_TAG" >> $GITHUB_OUTPUT
-          echo "Found tag to use for release: $LATEST_TAG"
+          # Validate that the tag is in the correct format (vX.Y.Z)
+          if ! echo "$RELEASE_TAG" | grep -qE '^v[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "Error: Tag '$RELEASE_TAG' is not in the expected format (vX.Y.Z)" >&2
+            exit 1
+          fi
+          
+          echo "tag=$RELEASE_TAG" >> $GITHUB_OUTPUT
+          echo "Found tag to use for release: $RELEASE_TAG"
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
@@ -86,6 +89,7 @@ jobs:
             Commit message: ${{ steps.commit-details.outputs.commit_msg }}
           draft: false
           prerelease: false
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
