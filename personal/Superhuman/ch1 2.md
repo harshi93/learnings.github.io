@@ -1,0 +1,5 @@
+On cellular level, aging is related to your mitochondria. Mitochondria are tiny organelles inside your cells that extract energy from the food you digest and create a chemical called adenosine triphosphate, or ATP, which stores energy for cellular function
+
+As you get older, though, your mitochondria begin to falter. This leads to an increase in reactive oxygen species, also known as free radicals. These damage your cells and cause widespread chronic inflammation, laying the groundwork for degenerative diseases like cancer
+
+your mitochondria also produce antioxidants, compounds which curb the damaging effects of free radicals. In order to remain young, your body needs to produce as many antioxidants as it does free radicals. Unfortunately, replacing antioxidants isn’t as simple as taking supplements. If we want to keep our mitochondria functioning well for decades to come, we need to create habits that transform our bodies from the inside out.

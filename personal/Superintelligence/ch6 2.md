@@ -1,0 +1,1 @@
+It’s likely that the increasing availability and decreasing cost of technology will lead to the cheap mass production of machines capable of doing jobs that currently require the hands and mind of a human. This means that machines will not only replace the entire human workforce but will also be easily replaceable.
