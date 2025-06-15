@@ -1,0 +1,1 @@
+We tend to be engrossed by the interesting: whether compelling stories or exotic explanations.
