@@ -1,12 +1,17 @@
-name: Create Release on Commit
+name: Create Release After Tag
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Create Tag on Commit"]
+    types:
+      - completed
     branches:
       - main
 
 jobs:
   create-release:
+    # Only run if the tag workflow was successful
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -24,50 +29,28 @@ jobs:
           echo "commit_msg=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
           set +x
 
-      - name: Determine next version
-        id: semver
+      - name: Get latest tag
+        id: get-tag
         run: |
-          # Get the latest tag if it exists
+          # Get the latest tag created by the auto-tag workflow
           git fetch --tags
           LATEST_TAG=$(git tag -l "v*" | sort -V | tail -n 1)
           
-          # Set default version if no tags found
           if [ -z "$LATEST_TAG" ]; then
-            NEW_VERSION="v1.0.0"
-          else
-            # Extract the version numbers
-            MAJOR=$(echo $LATEST_TAG | sed 's/v\([0-9]*\)\.[0-9]*\.[0-9]*/\1/')
-            MINOR=$(echo $LATEST_TAG | sed 's/v[0-9]*\.\([0-9]*\)\.[0-9]*/\1/')
-            PATCH=$(echo $LATEST_TAG | sed 's/v[0-9]*\.[0-9]*\.\([0-9]*\)/\1/')
-            
-            # Check commit message for keywords to determine version bump
-            if echo "${{ steps.commit-details.outputs.commit_msg }}" | grep -i -q "\bbreak\b\|\bmajor\b\|\bbreaking change\b"; then
-              # Major version bump
-              MAJOR=$((MAJOR + 1))
-              MINOR=0
-              PATCH=0
-            elif echo "${{ steps.commit-details.outputs.commit_msg }}" | grep -i -q "\b\Merge*\b\|\badds\b\|\bbump\b\|\bfeat\b\|\bfeature\b\|\bminor\b"; then
-              # Minor version bump
-              MINOR=$((MINOR + 1))
-              PATCH=0
-            else
-              # Patch version bump
-              PATCH=$((PATCH + 1))
-            fi
-            
-            NEW_VERSION="v$MAJOR.$MINOR.$PATCH"
+            echo "Error: No tags found" >&2
+            exit 1
           fi
           
-          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
-          echo "Determined next version: $NEW_VERSION"
+          echo "tag=$LATEST_TAG" >> $GITHUB_OUTPUT
+          echo "Found latest tag: $LATEST_TAG"
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          name: Release ${{ steps.semver.outputs.new_version }}
-          tag_name: ${{ steps.semver.outputs.new_version }}
+          name: Release ${{ steps.get-tag.outputs.tag }}
+          tag_name: ${{ steps.get-tag.outputs.tag }}
           body: |
-            Automated release ${{ steps.semver.outputs.new_version }}
+            Automated release ${{ steps.get-tag.outputs.tag }}
             
             Commit SHA: ${{ steps.commit-details.outputs.sha_short }}
             Commit message: ${{ steps.commit-details.outputs.commit_msg }}
