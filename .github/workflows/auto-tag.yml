@@ -1,0 +1,56 @@
+name: Create Tag on Commit
+
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  create-tag:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+      - name: Get commit details
+        id: commit-details
+        run: |
+          echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          echo "date=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
+          
+      - name: Determine next tag
+        id: tag
+        run: |
+          # Get the latest tag if it exists
+          git fetch --tags
+          LATEST_TAG=$(git tag -l "v*" | sort -V | tail -n 1)
+          
+          # Set default version if no tags found
+          if [ -z "$LATEST_TAG" ]; then
+            NEW_TAG="v1.0.0"
+          else
+            # Extract the version numbers
+            MAJOR=$(echo $LATEST_TAG | sed 's/v\([0-9]*\)\.[0-9]*\.[0-9]*/\1/')
+            MINOR=$(echo $LATEST_TAG | sed 's/v[0-9]*\.\([0-9]*\)\.[0-9]*/\1/')
+            PATCH=$(echo $LATEST_TAG | sed 's/v[0-9]*\.[0-9]*\.\([0-9]*\)/\1/')
+            
+            # Increment patch version
+            PATCH=$((PATCH + 1))
+            
+            NEW_TAG="v$MAJOR.$MINOR.$PATCH"
+          fi
+          
+          echo "new_tag=$NEW_TAG" >> $GITHUB_OUTPUT
+          echo "Determined next tag: $NEW_TAG"
+          
+      - name: Create and push tag
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git tag -a ${{ steps.tag.outputs.new_tag }} -m "Automatic tag for commit ${{ steps.commit-details.outputs.sha_short }}"
+          git push origin ${{ steps.tag.outputs.new_tag }}
+
