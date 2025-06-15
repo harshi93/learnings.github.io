@@ -44,7 +44,7 @@ jobs:
               MAJOR=$((MAJOR + 1))
               MINOR=0
               PATCH=0
-            elif echo "${{ steps.commit-details.outputs.commit_msg }}" | grep -i -q "\bfeat\b\|\bfeature\b\|\bminor\b"; then
+            elif echo "${{ steps.commit-details.outputs.commit_msg }}" | grep -i -q "\badds\b\|\bbump\b\|\bfeat\b\|\bfeature\b\|\bminor\b"; then
               # Minor version bump
               MINOR=$((MINOR + 1))
               PATCH=0
