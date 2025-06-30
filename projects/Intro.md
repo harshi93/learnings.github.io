@@ -1,33 +1,45 @@
-# Cross Account Container Deploy
-
 # Approve My Build
 
-# Cloud Infra With Terraform
+# Archive The Unused
 
-# Secure My Microservice
+# Am I Good To Go
 
-# Migrate The Mongo
+# Help My ELK Is Choking
 
-# Security Lake
+# I am Listening
 
-# Vulnerability Assessment With Inspector
+# Inspect My Inventory
 
-# Compliance Assessment With Config
+# Move My Mongo
 
-# Kinesis to Topics
+# My Kubernetes Is Old
 
-# Kops to EKS
-
-# Contact Center as Service
+# My SaaS Needs CPR
 
 # Notify On Change
 
-# Train My Noc
+# Notify When Root Enters
+
+# Omnipresent Lake
+
+# Oxygen For My Backend
+
+# Streams To Kafka
 
 # Stabilize My Production
 
 # Switch My Datacenter
 
+# Secure My Microservice
+
+# Some Noob Broke Nginx
+
+# SIEM With Green Blood
+
+# Terraform My SaaS
+
+# Train My Noc
+
 # Where's My AppCenter
 
-# Cache My Feature Flags
+# Your SaaS My House
